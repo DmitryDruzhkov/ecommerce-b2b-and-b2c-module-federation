@@ -14,7 +14,20 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ecommerce-b2b-and-b2c/auth-b2b/features": [
+        "libs/auth-b2b/features/src/index.ts"
+      ],
+      "@ecommerce-b2b-and-b2c/auth-b2c/features": [
+        "libs/auth-b2c/features/src/index.ts"
+      ],
+      "@ecommerce-b2b-and-b2c/auth/features": [
+        "libs/auth/features/src/index.ts"
+      ],
+      "@ecommerce-b2b-and-b2c/profile/features": [
+        "libs/profile/features/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

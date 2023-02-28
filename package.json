@@ -2,14 +2,18 @@
   "name": "ecommerce-b2b-and-b2c",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx serve ecommerce -o"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~15.1.0",
+    "@angular/cdk": "^15.1.5",
     "@angular/common": "~15.1.0",
     "@angular/compiler": "~15.1.0",
     "@angular/core": "~15.1.0",
     "@angular/forms": "~15.1.0",
+    "@angular/material": "^15.1.5",
     "@angular/platform-browser": "~15.1.0",
     "@angular/platform-browser-dynamic": "~15.1.0",
     "@angular/router": "~15.1.0",
@@ -25,7 +29,7 @@
     "@angular-eslint/eslint-plugin": "~15.0.0",
     "@angular-eslint/eslint-plugin-template": "~15.0.0",
     "@angular-eslint/template-parser": "~15.0.0",
-    "@angular/cli": "~15.1.0",
+    "@angular/cli": "^15.1.6",
     "@angular/compiler-cli": "~15.1.0",
     "@angular/language-service": "~15.1.0",
     "@nrwl/cypress": "15.7.2",
