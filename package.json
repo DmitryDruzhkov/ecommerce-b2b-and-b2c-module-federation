@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve ecommerce -o",
+    "mf:shell": "nx serve ecommerce -o",
+    "mf:auth": "nx serve auth -o",
+    "mf:authb2b": "nx serve auth-b2b -o",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,
@@ -14,7 +16,7 @@
     "@angular/compiler": "15.2.0",
     "@angular/core": "15.2.0",
     "@angular/forms": "15.2.0",
-    "@angular/material": "15.2.0",
+    "@angular/material": "^15.2.1",
     "@angular/platform-browser": "15.2.0",
     "@angular/platform-browser-dynamic": "15.2.0",
     "@angular/router": "15.2.0",
@@ -37,6 +39,7 @@
     "@nrwl/cypress": "15.8.0",
     "@nrwl/eslint-plugin-nx": "15.8.0",
     "@nrwl/jest": "15.8.0",
+    "@nrwl/js": "15.8.0",
     "@nrwl/linter": "15.8.0",
     "@nrwl/workspace": "15.8.0",
     "@schematics/angular": "15.2.0",

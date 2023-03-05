@@ -10,10 +10,7 @@
     "importHelpers": true,
     "target": "es2020",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -29,11 +26,9 @@
       ],
       "@ecommerce-b2b-and-b2c/profile/features": [
         "libs/profile/features/src/index.ts"
-      ]
+      ],
+      "@ecommerce-b2b-and-b2c/shared": ["libs/shared/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

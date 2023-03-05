@@ -1,7 +1,9 @@
 import {
   Component,
-  ComponentFactoryResolver,
+  ComponentRef,
+  inject,
   Inject,
+  SkipSelf,
   Type,
   ViewChild,
   ViewContainerRef,
@@ -10,52 +12,46 @@ import { CommonModule } from '@angular/common';
 import { AUTH_COMPONENTS_PROVIDER } from '../tokens';
 import { Observable } from 'rxjs';
 import { ComponentLoaderDirective } from '../directives/component-loader.directive';
+import { loadRemoteModule } from '@angular-architects/module-federation';
+import { ProfileInfoComponent } from '@ecommerce-b2b-and-b2c/shared';
+import { Profile, ProfileService } from '@ecommerce-b2b-and-b2c/profile/features';
 
 @Component({
   selector: 'ecommerce-b2b-and-b2c-auth',
   standalone: true,
-  imports: [CommonModule, ComponentLoaderDirective],
+  imports: [CommonModule, ComponentLoaderDirective, ProfileInfoComponent],
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss'],
 })
 export class AuthComponent {
-  /* @ViewChild(ComponentLoaderDirective, {static: true}) private dynamicHost!: ComponentLoaderDirective;  
+  @ViewChild('authContainer', { read: ViewContainerRef }) authContainer!: ViewContainerRef;
 
-  container!: ViewContainerRef;
+  public profile$: Observable<Profile> = this.profileService.getProfile();
 
-  components = [];
+  constructor(@SkipSelf() private profileService: ProfileService) {}
 
-  constructor(
-    private componentFactoryResolver: ComponentFactoryResolver,
-    @Inject(AUTH_COMPONENTS_PROVIDER) componentProvider: Observable<any>
-  ) {}
+  authComponentRef!: ComponentRef<any>;
 
-  public ngOnInit(): void {
-    this.componentProvider.subscribe
+  public async authB2B(): Promise<void> {
+    /* TODO: через провайдер */
+    this.loadMFComponent('http://localhost:4202/remoteEntry.js');
   }
 
-  public openB2B(): void {
-    const component = '@ecommerce-b2b-and-b2c/auth-b2b/features';
+  public async authB2C(): Promise<void> {
+    this.loadMFComponent('http://localhost:4201/remoteEntry.js');
   }
 
-  public openB2C(): void {}
-
-  addComponent(componentClass: Type<any>) {
-    const viewContainerRef = this.dynamicHost.viewContainerRef;  
-    viewContainerRef.clear();  
-  
-    const componentRef = viewContainerRef.createComponent<any>(message.type); 
-  }
-
-  removeComponent(componentClass: Type<any>) {
-    const component = this.components.find(
-      (component) => component.instance instanceof componentClass
-    );
-    const componentIndex = this.components.indexOf(component);
-
-    if (componentIndex !== -1) {
-      this.container.remove(this.container.indexOf(component));
-      this.components.splice(componentIndex, 1);
+  private async loadMFComponent(mFPath: string): Promise<void> {
+    if (this.authComponentRef) {
+      this.authComponentRef.destroy();
     }
-  } */
+
+    const m = await loadRemoteModule({
+      type: 'module',
+      remoteEntry: mFPath,
+      exposedModule: './Component'
+    });
+
+    this.authComponentRef = this.authContainer.createComponent(m.AppComponent);
+  }
 }

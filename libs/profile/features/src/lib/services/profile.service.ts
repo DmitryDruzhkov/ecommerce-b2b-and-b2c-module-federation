@@ -1,18 +1,34 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
+import { DefaultProfile } from '../shared/constants';
+import { Profile, ProfileType } from '../shared/interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
 
-  private isB2b: BehaviorSubject<boolean> = new BehaviorSubject(false)
+  private profile$: BehaviorSubject<Profile> = new BehaviorSubject(DefaultProfile);
 
-  public setIsB2B(isB2b: boolean): void {
-    this.isB2b.next(isB2b);
+  constructor() {
+    console.log(`ProfileService`)
   }
 
+  public getProfile(): Observable<Profile> {
+    return this.profile$;
+  }
+
+  public setProfile(profile: Profile): void {
+    this.profile$.next(profile);
+  }
+
+  /* private isB2b: BehaviorSubject<boolean> = new BehaviorSubject(false) */
+
+  /* public setIsB2B(isB2b: boolean): void {
+    this.isB2b.next(isB2b);
+  } */
+
   public isB2bStream(): Observable<boolean> {
-    return this.isB2b.asObservable();
+    return this.profile$.pipe(map((profile: Profile) => profile.type === ProfileType.B2B));
   }
 }

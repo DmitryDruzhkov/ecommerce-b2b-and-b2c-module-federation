@@ -1,0 +1,9 @@
+<ng-container *ngIf="profile else emptyProfile">
+  Профиль:
+  {{ profile.name }}
+  {{ profile.type }}
+</ng-container>
+
+<ng-template #emptyProfile>
+  Профиль не задан
+</ng-template>

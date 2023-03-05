@@ -1,7 +1,8 @@
-auth component
-<!-- <div>
-  <button (click)="openB2B()">B2B</button>
-  <button (click)="openB2C()">B2C</button>
-</div>
+Авторизация
 
-<ng-template componentLoader></ng-template> -->
+<ecommerce-b2b-and-b2c-profile-info *ngIf="(profile$ | async) as profile" [profile]="profile"></ecommerce-b2b-and-b2c-profile-info>
+
+<button (click)="authB2B()">Б2Б</button>
+<button (click)="authB2C()">Б2С</button>
+
+<div #authContainer></div>

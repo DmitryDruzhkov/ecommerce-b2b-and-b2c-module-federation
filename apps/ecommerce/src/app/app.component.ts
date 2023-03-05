@@ -1,5 +1,6 @@
 import { RouterModule } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { loadRemoteModule } from '@angular-architects/module-federation';
 
 @Component({
   standalone: true,
@@ -9,5 +10,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'ecommerce';
+  @ViewChild('authContainer', { read: ViewContainerRef }) authContainer!: ViewContainerRef;
+
+  public async loadAuth(): Promise<void> {
+    /* const m = await import('mfe1/Component'); */
+
+    const m = await loadRemoteModule({
+      type: 'module',
+      remoteEntry: 'http://localhost:4201/remoteEntry.js',
+      exposedModule: './Component'
+    });
+
+    const ref = this.authContainer.createComponent(m.AppComponent);
+  }
 }
