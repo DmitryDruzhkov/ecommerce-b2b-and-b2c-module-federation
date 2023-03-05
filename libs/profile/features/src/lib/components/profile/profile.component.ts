@@ -1,7 +1,7 @@
-import { Component, inject, SkipSelf } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileService } from '../../services/profile.service';
-import { Profile } from '../../shared/interfaces';
+import { Profile } from '@ecommerce-b2b-and-b2c/shared';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -12,7 +12,6 @@ import { Observable } from 'rxjs';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
+  private profileService: ProfileService = inject(ProfileService);
   public profile$: Observable<Profile> = this.profileService.getProfile()
-
-  constructor(@SkipSelf() private profileService: ProfileService) {}
 }

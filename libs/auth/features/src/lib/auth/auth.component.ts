@@ -2,9 +2,6 @@ import {
   Component,
   ComponentRef,
   inject,
-  Inject,
-  SkipSelf,
-  Type,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
@@ -14,7 +11,8 @@ import { Observable } from 'rxjs';
 import { ComponentLoaderDirective } from '../directives/component-loader.directive';
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { ProfileInfoComponent } from '@ecommerce-b2b-and-b2c/shared';
-import { Profile, ProfileService } from '@ecommerce-b2b-and-b2c/profile/features';
+import { ProfileService } from '@ecommerce-b2b-and-b2c/profile/features';
+import { Profile } from '@ecommerce-b2b-and-b2c/shared';
 
 @Component({
   selector: 'ecommerce-b2b-and-b2c-auth',
@@ -26,9 +24,8 @@ import { Profile, ProfileService } from '@ecommerce-b2b-and-b2c/profile/features
 export class AuthComponent {
   @ViewChild('authContainer', { read: ViewContainerRef }) authContainer!: ViewContainerRef;
 
+  private profileService: ProfileService = inject(ProfileService);
   public profile$: Observable<Profile> = this.profileService.getProfile();
-
-  constructor(@SkipSelf() private profileService: ProfileService) {}
 
   authComponentRef!: ComponentRef<any>;
 

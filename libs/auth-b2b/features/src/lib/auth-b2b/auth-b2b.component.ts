@@ -1,6 +1,7 @@
-import { Component, inject, OnInit, SkipSelf } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProfileComponent, ProfileService, ProfileType } from '@ecommerce-b2b-and-b2c/profile/features';
+import { ProfileComponent, ProfileService } from '@ecommerce-b2b-and-b2c/profile/features';
+import { ProfileType } from '@ecommerce-b2b-and-b2c/shared';
 
 @Component({
   selector: 'ecommerce-b2b-and-b2c-auth-b2b',
@@ -10,8 +11,8 @@ import { ProfileComponent, ProfileService, ProfileType } from '@ecommerce-b2b-an
   styleUrls: ['./auth-b2b.component.scss'],
 })
 export class AuthB2bComponent implements OnInit {
-  
-  constructor(@SkipSelf() private profileService: ProfileService) {}
+
+  private profileService: ProfileService = inject(ProfileService);
 
   public ngOnInit(): void {
     this.profileService.setProfile({

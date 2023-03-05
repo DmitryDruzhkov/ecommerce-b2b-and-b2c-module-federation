@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Profile } from '@ecommerce-b2b-and-b2c/profile/features';
+import { Profile } from '@ecommerce-b2b-and-b2c/shared';
 
 @Component({
   selector: 'ecommerce-b2b-and-b2c-profile-info',
