@@ -3,8 +3,8 @@ import { Component, ViewChild, ViewContainerRef } from '@angular/core';
 import { loadRemoteModule } from '@angular-architects/module-federation';
 
 @Component({
-  standalone: true,
-  imports: [RouterModule],
+  /* standalone: true, */
+  /* imports: [RouterModule], */
   selector: 'ecommerce-b2b-and-b2c-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

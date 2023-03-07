@@ -19,3 +19,16 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
+
+## Настройка: 
+## Создаём приложение shell и 2 приложения для mf
+nx g @nrwl/angular:application auth --standalone
+nx g @angular-architects/module-federation:init --project auth --port 4201 --type remote
+nx g @angular-architects/module-federation:init --project auth-b2b --port 4202 --type remote
+## Добавляем SSR, если app.component.ts сделан standalone, то надо сперва добавить app.module.ts, потом можно убрать
+nx g @nrwl/angular:setup-ssr
+
+## Чеклист
+- запуск SSR
+- добавить 2 shell'а
+- сделать singletone

@@ -9,7 +9,7 @@
       "executor": "@nrwl/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/ecommerce",
+        "outputPath": "dist/apps/ecommerce/browser",
         "index": "apps/ecommerce/src/index.html",
         "main": "apps/ecommerce/src/main.ts",
         "polyfills": ["zone.js"],
@@ -102,6 +102,57 @@
           "codeCoverage": true
         }
       }
+    },
+    "server": {
+      "dependsOn": ["build"],
+      "executor": "@angular-devkit/build-angular:server",
+      "options": {
+        "outputPath": "dist/apps/ecommerce/server",
+        "main": "apps/ecommerce/server.ts",
+        "tsConfig": "apps/ecommerce/tsconfig.server.json"
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "media"
+        },
+        "development": {
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve-ssr": {
+      "executor": "@nguniversal/builders:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "ecommerce:build:development",
+          "serverTarget": "ecommerce:server:development"
+        },
+        "production": {
+          "browserTarget": "ecommerce:build:production",
+          "serverTarget": "ecommerce:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "prerender": {
+      "executor": "@nguniversal/builders:prerender",
+      "options": {
+        "routes": ["/"]
+      },
+      "configurations": {
+        "development": {
+          "browserTarget": "ecommerce:build:development",
+          "serverTarget": "ecommerce:server:development"
+        },
+        "production": {
+          "browserTarget": "ecommerce:build:production",
+          "serverTarget": "ecommerce:server:production"
+        }
+      },
+      "defaultConfiguration": "production"
     }
   },
   "tags": []
