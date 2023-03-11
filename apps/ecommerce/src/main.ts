@@ -1,4 +1,4 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+/* import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 
@@ -12,4 +12,7 @@ if (document.readyState !== 'loading') {
   bootstrap();
 } else {
   document.addEventListener('DOMContentLoaded', bootstrap);
-}
+} */
+
+import('./bootstrap')
+	.catch(err => console.error(err));

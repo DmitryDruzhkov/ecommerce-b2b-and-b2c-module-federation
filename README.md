@@ -25,6 +25,8 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 nx g @nrwl/angular:application auth --standalone
 nx g @angular-architects/module-federation:init --project auth --port 4201 --type remote
 nx g @angular-architects/module-federation:init --project auth-b2b --port 4202 --type remote
+nx g @nrwl/angular:application profile
+nx g @angular-architects/module-federation:init --project profile --port 4203 --type remote
 ## Добавляем SSR, если app.component.ts сделан standalone, то надо сперва добавить app.module.ts, потом можно убрать
 nx g @nrwl/angular:setup-ssr
 

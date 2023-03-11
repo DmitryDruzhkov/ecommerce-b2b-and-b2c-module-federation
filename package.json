@@ -9,6 +9,7 @@
     "mf:shell:ssr": "nx build --project=ecommerce --prod --configuration=production && nx run ecommerce:server:production",
     "mf:auth": "nx serve auth -o",
     "mf:authb2b": "nx serve auth-b2b -o",
+    "mf:profile": "nx serve profile -o",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,
