@@ -30,9 +30,6 @@
       "@ecommerce-b2b-and-b2c/profile/features": [
         "libs/profile/features/src/index.ts"
       ],
-      "@ecommerce-b2b-and-b2c/profile": [
-        "apps/profile/src/app/app.module.ts"
-      ],
       "@ecommerce-b2b-and-b2c/shared": [
         "libs/shared/src/index.ts"
       ]

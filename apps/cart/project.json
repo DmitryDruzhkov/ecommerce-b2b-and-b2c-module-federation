@@ -1,8 +1,8 @@
 {
-  "name": "profile",
+  "name": "cart",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/profile/src",
+  "sourceRoot": "apps/cart/src",
   "prefix": "ecommerce-b2b-and-b2c",
   "targets": {
     "build": {
@@ -11,24 +11,24 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/apps/profile",
-        "index": "apps/profile/src/index.html",
-        "main": "apps/profile/src/main.ts",
+        "outputPath": "dist/apps/cart",
+        "index": "apps/cart/src/index.html",
+        "main": "apps/cart/src/main.ts",
         "polyfills": [
           "zone.js"
         ],
-        "tsConfig": "apps/profile/tsconfig.app.json",
+        "tsConfig": "apps/cart/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/profile/src/favicon.ico",
-          "apps/profile/src/assets"
+          "apps/cart/src/favicon.ico",
+          "apps/cart/src/assets"
         ],
         "styles": [
-          "apps/profile/src/styles.scss"
+          "apps/cart/src/styles.scss"
         ],
         "scripts": [],
         "customWebpackConfig": {
-          "path": "apps/profile/webpack.config.js"
+          "path": "apps/cart/webpack.config.js"
         },
         "commonChunk": false
       },
@@ -48,7 +48,7 @@
           ],
           "outputHashing": "all",
           "customWebpackConfig": {
-            "path": "apps/profile/webpack.prod.config.js"
+            "path": "apps/cart/webpack.prod.config.js"
           }
         },
         "development": {
@@ -66,23 +66,23 @@
       "executor": "@nrwl/angular:webpack-dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "profile:build:production"
+          "browserTarget": "cart:build:production"
         },
         "development": {
-          "browserTarget": "profile:build:development"
+          "browserTarget": "cart:build:development"
         }
       },
       "defaultConfiguration": "development",
       "options": {
-        "port": 4203,
-        "publicHost": "http://localhost:4203"
+        "port": 4204,
+        "publicHost": "http://localhost:4204"
       }
     },
     "extract-i18n": {
       "executor": "ngx-build-plus:extract-i18n",
       "options": {
-        "browserTarget": "profile:build",
-        "extraWebpackConfig": "apps/profile/webpack.config.js"
+        "browserTarget": "cart:build",
+        "extraWebpackConfig": "apps/cart/webpack.config.js"
       }
     },
     "lint": {
@@ -92,8 +92,8 @@
       ],
       "options": {
         "lintFilePatterns": [
-          "apps/profile/**/*.ts",
-          "apps/profile/**/*.html"
+          "apps/cart/**/*.ts",
+          "apps/cart/**/*.html"
         ]
       }
     },
@@ -103,7 +103,7 @@
         "{workspaceRoot}/coverage/{projectRoot}"
       ],
       "options": {
-        "jestConfig": "apps/profile/jest.config.ts",
+        "jestConfig": "apps/cart/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {

@@ -1,19 +1,19 @@
 {
-  "name": "profile-e2e",
+  "name": "cart-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/profile-e2e/src",
+  "sourceRoot": "apps/cart-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/profile-e2e/cypress.config.ts",
-        "devServerTarget": "profile:serve:development",
+        "cypressConfig": "apps/cart-e2e/cypress.config.ts",
+        "devServerTarget": "cart:serve:development",
         "testingType": "e2e"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "profile:serve:production"
+          "devServerTarget": "cart:serve:production"
         }
       }
     },
@@ -21,10 +21,10 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/profile-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/cart-e2e/**/*.{js,ts}"]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["profile"]
+  "implicitDependencies": ["cart"]
 }
