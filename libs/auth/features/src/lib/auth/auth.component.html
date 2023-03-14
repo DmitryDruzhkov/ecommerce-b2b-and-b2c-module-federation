@@ -1,8 +1,22 @@
-Авторизация
+<div>
+  <div>
+    Информация по профилю:
+  </div>
+  <ecommerce-b2b-and-b2c-profile-info *ngIf="(profile$ | async) as profile" [profile]="profile"></ecommerce-b2b-and-b2c-profile-info>
+</div>
+<div>
+  <div>
+    Выберите тип авторизации:
+  </div>
+  <div>
+    <button (click)="authB2B()" mat-raised-button color="primary">Б2Б</button>
+    <button (click)="authB2C()" mat-raised-button color="primary">Б2С</button>    
+  </div>
+  <div>
+    Авторизаия:
+  </div>
+  <div #authContainer></div>
+</div>
 
-<ecommerce-b2b-and-b2c-profile-info *ngIf="(profile$ | async) as profile" [profile]="profile"></ecommerce-b2b-and-b2c-profile-info>
 
-<button (click)="authB2B()">Б2Б</button>
-<button (click)="authB2C()">Б2С</button>
 
-<div #authContainer></div>
