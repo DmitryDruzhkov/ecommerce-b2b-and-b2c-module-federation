@@ -14,11 +14,14 @@ import { ProfileInfoComponent } from '@ecommerce-b2b-and-b2c/shared';
 import { ProfileService } from '@ecommerce-b2b-and-b2c/profile/features';
 import { Profile } from '@ecommerce-b2b-and-b2c/shared';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
   selector: 'ecommerce-b2b-and-b2c-auth',
   standalone: true,
-  imports: [CommonModule, ComponentLoaderDirective, ProfileInfoComponent, MatButtonModule,],
+  imports: [CommonModule, ComponentLoaderDirective, ProfileInfoComponent, MatButtonModule, MatCardModule, MatDividerModule, MatListModule],
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss'],
 })

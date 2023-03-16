@@ -1,22 +1,25 @@
-<div>
-  <div>
-    Информация по профилю:
-  </div>
-  <ecommerce-b2b-and-b2c-profile-info *ngIf="(profile$ | async) as profile" [profile]="profile"></ecommerce-b2b-and-b2c-profile-info>
-</div>
-<div>
-  <div>
-    Выберите тип авторизации:
-  </div>
-  <div>
-    <button (click)="authB2B()" mat-raised-button color="primary">Б2Б</button>
-    <button (click)="authB2C()" mat-raised-button color="primary">Б2С</button>    
-  </div>
-  <div>
-    Авторизаия:
-  </div>
-  <div #authContainer></div>
-</div>
-
-
-
+<mat-card>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item role="listitem">
+        Информация по профилю:
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <ecommerce-b2b-and-b2c-profile-info *ngIf="(profile$ | async) as profile"
+          [profile]="profile"></ecommerce-b2b-and-b2c-profile-info>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem">
+        Выберите тип авторизации:
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <button (click)="authB2B()" mat-raised-button color="primary">Б2Б</button>
+        <button (click)="authB2C()" mat-raised-button color="primary">Б2С</button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem">
+        <div #authContainer></div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
