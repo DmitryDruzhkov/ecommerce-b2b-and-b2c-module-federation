@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     RouterModule.forChild(appRoutes),
     MatButtonModule,
   ],

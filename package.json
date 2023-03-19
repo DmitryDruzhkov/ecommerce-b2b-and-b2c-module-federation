@@ -7,9 +7,13 @@
     "mf:shell": "nx serve ecommerce -o",
     "mf:shell:dev:ssr": "node --max_old_space_size=8192 node_modules/nx/bin/nx run ecommerce:serve-ssr",
     "mf:shell:ssr": "nx build --project=ecommerce --prod --configuration=production && nx run ecommerce:server:production",
+    "mf:shell:serve:ssr": "node dist/apps/ecommerce/server/main.js",
     "mf:auth": "nx serve auth -o",
     "mf:authb2b": "nx serve auth-b2b -o",
     "mf:cart": "nx serve cart -o",
+    "mf:cart:dev:ssr": "node --max_old_space_size=8192 node_modules/nx/bin/nx run cart:serve-ssr",
+    "mf:cart:ssr": "nx build --project=cart --prod --configuration=production && nx run cart:server:production",
+    "mf:cart:serve:ssr": "node dist/apps/cart/server/main.js",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,

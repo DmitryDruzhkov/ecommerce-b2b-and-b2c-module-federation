@@ -14,6 +14,11 @@ export const appRoutes: Route[] = [
       })
       .then(m => m.AppModule)
   }
+  /* {
+    path: 'cart',
+    loadChildren: () => loadRemoteModule('cart', './Module')
+      .then(m => m.AppModule)
+  } */
 ];
 
 @NgModule({
