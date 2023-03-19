@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileService } from '../../services/profile.service';
-import { Profile } from '@ecommerce-b2b-and-b2c/shared';
+import { Profile } from '@ecommerce-b2b-and-b2c/shared/entities';
 import { Observable } from 'rxjs';
 
 @Component({

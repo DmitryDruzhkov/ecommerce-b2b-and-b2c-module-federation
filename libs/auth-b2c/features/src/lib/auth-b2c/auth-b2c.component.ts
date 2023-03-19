@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileComponent, ProfileService } from '@ecommerce-b2b-and-b2c/profile/features';
-import { ProfileType } from '@ecommerce-b2b-and-b2c/shared';
+import { ProfileType } from '@ecommerce-b2b-and-b2c/shared/entities';
 
 @Component({
   selector: 'ecommerce-b2b-and-b2c-auth-b2c',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { DefaultProfile } from '../shared/constants';
-import { Profile, ProfileType } from '@ecommerce-b2b-and-b2c/shared';
+import { Profile, ProfileType } from '@ecommerce-b2b-and-b2c/shared/entities';
 
 @Injectable({
   providedIn: 'root'

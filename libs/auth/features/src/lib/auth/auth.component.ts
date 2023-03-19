@@ -6,13 +6,12 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AUTH_COMPONENTS_PROVIDER } from '../tokens';
 import { Observable } from 'rxjs';
 import { ComponentLoaderDirective } from '../directives/component-loader.directive';
 import { loadRemoteModule } from '@angular-architects/module-federation';
-import { ProfileInfoComponent } from '@ecommerce-b2b-and-b2c/shared';
+import { ProfileInfoComponent } from '@ecommerce-b2b-and-b2c/shared/ui';
 import { ProfileService } from '@ecommerce-b2b-and-b2c/profile/features';
-import { Profile } from '@ecommerce-b2b-and-b2c/shared';
+import { Profile } from '@ecommerce-b2b-and-b2c/shared/entities';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
